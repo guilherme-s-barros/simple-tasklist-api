@@ -5,6 +5,16 @@ import { CreateTaskInput, TasksRepository } from '../tasks-repository'
 export class InMemoryTasksRepository implements TasksRepository {
   public items: TaskDocument[] = []
 
+  async findById(id: string) {
+    const task = this.items.find((item) => item.id === id)
+
+    if (!task) {
+      return null
+    }
+
+    return task
+  }
+
   async findManyByUserId(userId: string, page: number) {
     const tasks = this.items
       .filter((item) => item.userId.toString() === userId)
