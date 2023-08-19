@@ -17,5 +17,5 @@
 
 - [x] A senha do usuário precisa estar criptografada;
 - [ ] Os dados da aplicação precisam estar persistidos em um banco de dados MongoDB;
-- [ ] A listagem de tarefas precisa estar paginada com 20 itens por página;
+- [x] A listagem de tarefas precisa estar paginada com 20 itens por página;
 - [ ] O usuário deve ser identificado por um token JWT.
