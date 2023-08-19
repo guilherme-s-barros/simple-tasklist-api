@@ -17,7 +17,7 @@ export class FetchUserTasksUseCase {
     userId,
     page,
   }: FetchUserTasksUseCaseRequest): Promise<FetchUserTasksUseCaseResponse> {
-    const tasks = await this.tasksRepository.findByUserId(userId, page)
+    const tasks = await this.tasksRepository.findManyByUserId(userId, page)
 
     return {
       tasks,
