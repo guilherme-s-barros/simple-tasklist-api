@@ -9,4 +9,5 @@ export interface CreateUserInput {
 export interface UsersRepository {
   create(data: CreateUserInput): Promise<UserDocument>
   findByEmail(email: string): Promise<UserDocument | null>
+  findById(id: string): Promise<UserDocument | null>
 }
