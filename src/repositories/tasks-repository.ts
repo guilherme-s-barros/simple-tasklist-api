@@ -8,6 +8,6 @@ export interface CreateTaskInput {
 }
 
 export interface TasksRepository {
-  findByUserId(userId: string): Promise<TaskDocument[]>
+  findByUserId(userId: string, page: number): Promise<TaskDocument[]>
   create(data: CreateTaskInput): Promise<TaskDocument>
 }

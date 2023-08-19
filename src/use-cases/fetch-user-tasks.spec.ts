@@ -26,18 +26,44 @@ describe('Fetch user tasks use case', () => {
     })
 
     await tasksRepository.create({
-      title: 'title example',
+      title: 'to-do 1',
       userId: user.id,
     })
 
     const { tasks } = await sut.execute({
       userId: user.id,
+      page: 1,
     })
 
     expect(tasks).toEqual([
       expect.objectContaining({
-        title: 'title example',
+        title: 'to-do 1',
       }),
+    ])
+  })
+
+  it('should be able to fetch paginated user tasks', async () => {
+    const user = await usersRepository.create({
+      name: 'John Doe',
+      email: 'johndoe@example.com',
+      passwordHash: '123456',
+    })
+
+    for (let i = 1; i <= 22; i++) {
+      await tasksRepository.create({
+        title: `to-do ${i}`,
+        userId: user.id,
+      })
+    }
+
+    const { tasks } = await sut.execute({
+      userId: user.id,
+      page: 2,
+    })
+
+    expect(tasks).toEqual([
+      expect.objectContaining({ title: 'to-do 21' }),
+      expect.objectContaining({ title: 'to-do 22' }),
     ])
   })
 })
