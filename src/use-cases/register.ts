@@ -3,6 +3,8 @@ import { hash } from 'bcryptjs'
 import { UserDocument } from '@/models/user'
 import { UsersRepository } from '@/repositories/users-repository'
 
+import { UserAlreadyExistsError } from './errors/user-already-exists-error'
+
 interface RegisterUseCaseRequest {
   name: string
   email: string
@@ -24,7 +26,7 @@ export class RegisterUseCase {
     const userAlreadyExists = await this.usersRepository.findByEmail(email)
 
     if (userAlreadyExists) {
-      throw new Error('User already exists.')
+      throw new UserAlreadyExistsError()
     }
 
     const passwordHash = await hash(password, 6)
