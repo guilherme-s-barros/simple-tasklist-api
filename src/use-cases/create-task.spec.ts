@@ -27,8 +27,8 @@ describe('Create task use case', () => {
     })
 
     const { task } = await sut.execute({
-      title: 'task example',
-      description: 'description example',
+      title: 'to-do 1',
+      description: 'to-do description',
       dueDate: new Date(),
       userId: user.id,
     })
@@ -39,8 +39,8 @@ describe('Create task use case', () => {
   it('should not be able to create a task with a non-existent user id', async () => {
     await expect(() =>
       sut.execute({
-        title: 'task example',
-        description: 'description example',
+        title: 'to-do 1',
+        description: 'to-do description',
         dueDate: new Date(),
         userId: 'non-existent-user-id',
       }),
