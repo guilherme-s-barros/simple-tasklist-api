@@ -6,8 +6,8 @@ export async function createConnection() {
   try {
     await mongoose.connect(env.DATABASE_URL)
 
-    console.log('Successfully connected to MongoDB.')
+    console.log('✅ Successfully connected to MongoDB.')
   } catch (error) {
-    console.log('Error connecting to MongoDB.')
+    console.log('❌ Error connecting to MongoDB.')
   }
 }
