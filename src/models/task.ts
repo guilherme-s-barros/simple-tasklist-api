@@ -2,9 +2,9 @@ import { Document, ObjectId, Schema, Types, model } from 'mongoose'
 
 export interface TaskDocument extends Document {
   title: string
-  description?: string
+  description?: string | null
+  dueDate?: Date | null
   userId: ObjectId
-  dueDate?: Date
   completed: boolean
 }
 
