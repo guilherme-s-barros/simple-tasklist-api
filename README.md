@@ -2,8 +2,8 @@
 
 - [x] Deve ser possível cadastrar um usuário;
 - [x] Deve ser possível se autenticar;
-- [ ] O usuário deve poder criar uma nova tarefa;
-- [ ] O usuário deve poder listar suas tarefas;
+- [x] O usuário deve poder criar uma nova tarefa;
+- [x] O usuário deve poder listar suas tarefas;
 - [ ] O usuário deve poder obter uma tarefa;
 - [ ] O usuário deve poder atualizar uma tarefa;
 - [ ] O usuário deve poder deletar uma tarefa;
