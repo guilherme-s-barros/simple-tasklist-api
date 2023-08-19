@@ -1,6 +1,6 @@
 import { User, UserDocument } from '@/models/user'
 
-import { CreateUserParams, UsersRepository } from '../users-repository'
+import { CreateUserInput, UsersRepository } from '../users-repository'
 
 export class InMemoryUsersRepository implements UsersRepository {
   public items: UserDocument[] = []
@@ -15,7 +15,7 @@ export class InMemoryUsersRepository implements UsersRepository {
     return user
   }
 
-  async create(data: CreateUserParams) {
+  async create(data: CreateUserInput) {
     const user = new User(data)
 
     this.items.push(user)

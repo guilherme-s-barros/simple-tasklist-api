@@ -1,12 +1,12 @@
 import { UserDocument } from '@/models/user'
 
-export interface CreateUserParams {
+export interface CreateUserInput {
   name: string
   email: string
   passwordHash: string
 }
 
 export interface UsersRepository {
-  create(user: CreateUserParams): Promise<UserDocument>
+  create(data: CreateUserInput): Promise<UserDocument>
   findByEmail(email: string): Promise<UserDocument | null>
 }
