@@ -6,13 +6,11 @@ import { ResourceNotFoundError } from './errors/resource-not-found-error'
 import { GetTaskUseCase } from './get-task'
 
 let tasksRepository: InMemoryTasksRepository
-
 let sut: GetTaskUseCase
 
 describe('Get a task use case', () => {
   beforeEach(() => {
     tasksRepository = new InMemoryTasksRepository()
-
     sut = new GetTaskUseCase(tasksRepository)
   })
 

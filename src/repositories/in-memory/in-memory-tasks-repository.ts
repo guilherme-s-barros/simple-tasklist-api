@@ -30,4 +30,14 @@ export class InMemoryTasksRepository implements TasksRepository {
 
     return task
   }
+
+  async save(task: TaskDocument) {
+    const taskIndex = this.items.findIndex((item) => item.id === task.id)
+
+    if (taskIndex >= 0) {
+      this.items[taskIndex] = task
+    }
+
+    return task
+  }
 }

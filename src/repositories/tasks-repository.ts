@@ -11,4 +11,5 @@ export interface TasksRepository {
   findById(id: string): Promise<TaskDocument | null>
   findManyByUserId(userId: string, page: number): Promise<TaskDocument[]>
   create(data: CreateTaskInput): Promise<TaskDocument>
+  save(task: TaskDocument): Promise<TaskDocument>
 }
