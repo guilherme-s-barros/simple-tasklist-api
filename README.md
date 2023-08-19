@@ -1,7 +1,7 @@
 ## Requisitos funcionais
 
 - [x] Deve ser possível cadastrar um usuário;
-- [ ] Deve ser possível se autenticar;
+- [x] Deve ser possível se autenticar;
 - [ ] O usuário deve poder criar uma nova tarefa;
 - [ ] O usuário deve poder listar suas tarefas;
 - [ ] O usuário deve poder obter uma tarefa;
