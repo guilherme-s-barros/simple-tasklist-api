@@ -5,7 +5,7 @@ export interface TaskDocument extends Document {
   description?: string
   userId: ObjectId
   dueDate?: Date
-  done: boolean
+  completed: boolean
 }
 
 const taskSchema = new Schema<TaskDocument>({
@@ -26,7 +26,7 @@ const taskSchema = new Schema<TaskDocument>({
     type: Date,
     required: false,
   },
-  done: {
+  completed: {
     type: Boolean,
     default: false,
   },
