@@ -1,11 +1,10 @@
-import { Document, model, Schema, Types } from 'mongoose'
+import { Document, model, ObjectId, Schema, Types } from 'mongoose'
 
 export interface UserDocument extends Document {
-  id: string
   name: string
   email: string
   passwordHash: string
-  tasks: Array<typeof Types.ObjectId>
+  tasks: Array<ObjectId>
 }
 
 const userSchema = new Schema<UserDocument>({

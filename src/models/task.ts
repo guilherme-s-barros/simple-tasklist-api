@@ -1,10 +1,9 @@
-import { Document, Schema, Types, model } from 'mongoose'
+import { Document, ObjectId, Schema, Types, model } from 'mongoose'
 
 export interface TaskDocument extends Document {
-  id: string
   title: string
   description?: string
-  userId: typeof Types.ObjectId
+  userId: ObjectId
   dueDate?: Date
   done: boolean
 }
