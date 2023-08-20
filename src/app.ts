@@ -4,6 +4,7 @@ import { ZodError } from 'zod'
 
 import { createConnection } from './database'
 import { env } from './env'
+import { tasksRoutes } from './http/routes/tasks'
 import { usersRoutes } from './http/routes/users'
 
 createConnection()
@@ -15,6 +16,7 @@ app.register(fastifyJwt, {
 })
 
 app.register(usersRoutes)
+app.register(tasksRoutes)
 
 app.setErrorHandler((error, _, reply) => {
   if (error instanceof ZodError) {
