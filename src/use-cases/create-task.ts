@@ -6,8 +6,8 @@ import { ResourceNotFoundError } from './errors/resource-not-found-error'
 
 interface CreateTaskUseCaseRequest {
   title: string
-  description?: string | null
-  dueDate?: Date | null
+  description: string | null
+  dueDate: Date | null
   userId: string
 }
 

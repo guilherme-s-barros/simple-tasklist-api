@@ -2,8 +2,8 @@ import { TaskDocument } from '@/models/task'
 
 export interface CreateTaskInput {
   title: string
-  description?: string | null
-  dueDate?: Date | null
+  description: string | null
+  dueDate: Date | null
   userId: string
 }
 

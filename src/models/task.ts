@@ -2,8 +2,8 @@ import { Document, ObjectId, Schema, Types, model } from 'mongoose'
 
 export interface TaskDocument extends Document {
   title: string
-  description?: string | null
-  dueDate?: Date | null
+  description: string | null
+  dueDate: Date | null
   userId: ObjectId
   completed: boolean
 }

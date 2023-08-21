@@ -18,6 +18,8 @@ describe('Edit a task use case', () => {
     const createdTask = await tasksRepository.create({
       title: 'to-do 1',
       userId: 'user-id-01',
+      description: null,
+      dueDate: null,
     })
 
     const { task } = await sut.execute({
@@ -36,6 +38,9 @@ describe('Edit a task use case', () => {
     await expect(() =>
       sut.execute({
         taskId: 'non-existing-task-id',
+        title: 'updated to-do',
+        description: 'updated to-do description',
+        dueDate: new Date(),
       }),
     ).rejects.toBeInstanceOf(ResourceNotFoundError)
   })

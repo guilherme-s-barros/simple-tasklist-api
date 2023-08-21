@@ -7,8 +7,8 @@ import { makeCreateTaskUseCase } from '@/use-cases/factories/make-create-task-us
 export async function create(request: FastifyRequest, reply: FastifyReply) {
   const createTaskBodySchema = z.object({
     title: z.string().nonempty(),
-    description: z.string().nonempty().optional().nullable(),
-    dueDate: z.coerce.date().optional().nullable(),
+    description: z.string().nonempty().nullable(),
+    dueDate: z.coerce.date().nullable(),
   })
 
   const { title, description, dueDate } = createTaskBodySchema.parse(

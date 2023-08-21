@@ -5,9 +5,9 @@ import { ResourceNotFoundError } from './errors/resource-not-found-error'
 
 interface EditTaskUseCaseRequest {
   taskId: string
-  title?: string
-  description?: string | null
-  dueDate?: Date | null
+  title: string
+  description: string | null
+  dueDate: Date | null
 }
 
 interface EditTaskUseCaseResponse {
