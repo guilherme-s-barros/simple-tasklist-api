@@ -1,5 +1,6 @@
 import 'dotenv/config'
 import mongoose from 'mongoose'
+import { randomUUID } from 'node:crypto'
 
 export default {
   name: 'mongo',
@@ -13,7 +14,7 @@ export default {
     }
 
     const db = await mongoose.connect(databaseURL, {
-      dbName: 'test',
+      dbName: randomUUID(),
     })
 
     return {
