@@ -20,7 +20,7 @@ export default {
     return {
       async teardown() {
         await db.connection.dropDatabase()
-        await db.disconnect()
+        await db.connection.destroy(true)
       },
     }
   },
