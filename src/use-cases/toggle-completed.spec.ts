@@ -18,6 +18,8 @@ describe('Toggle task state use case', () => {
     const createdTask = await tasksRepository.create({
       title: 'to-do 1',
       userId: 'user-id-01',
+      description: 'to-do description',
+      dueDate: new Date(),
     })
 
     const { task } = await sut.execute({
@@ -31,6 +33,8 @@ describe('Toggle task state use case', () => {
     const createdTask = await tasksRepository.create({
       title: 'to-do 1',
       userId: 'user-id-01',
+      description: 'to-do description',
+      dueDate: new Date(),
     })
 
     await sut.execute({

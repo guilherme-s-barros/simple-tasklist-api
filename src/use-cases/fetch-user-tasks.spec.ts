@@ -28,6 +28,8 @@ describe('Fetch user tasks use case', () => {
     await tasksRepository.create({
       title: 'to-do 1',
       userId: user.id,
+      description: 'to-do description',
+      dueDate: new Date(),
     })
 
     const { tasks } = await sut.execute({
@@ -53,6 +55,8 @@ describe('Fetch user tasks use case', () => {
       await tasksRepository.create({
         title: `to-do ${i}`,
         userId: user.id,
+        description: 'to-do description',
+        dueDate: new Date(),
       })
     }
 
