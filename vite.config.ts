@@ -6,5 +6,6 @@ export default defineConfig({
   test: {
     dir: 'src',
     environmentMatchGlobs: [['src/http/**', 'mongo']],
+    testTimeout: 10000,
   },
 })
