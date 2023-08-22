@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import mongoose from 'mongoose'
 
 export default {
@@ -11,13 +12,14 @@ export default {
       throw new Error('DATABASE_URL environment variable must be provided.')
     }
 
-    const connection = await mongoose.connect(databaseURL, {
+    const db = await mongoose.connect(databaseURL, {
       dbName: 'test',
     })
 
     return {
       async teardown() {
-        console.log('Teardown.')
+        await db.connection.dropDatabase()
+        await db.disconnect()
       },
     }
   },
