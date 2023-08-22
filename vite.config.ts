@@ -5,5 +5,6 @@ export default defineConfig({
   plugins: [tsconfigPaths()],
   test: {
     dir: 'src',
+    environmentMatchGlobs: [['src/http/**', 'mongo']],
   },
 })
