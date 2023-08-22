@@ -15,6 +15,7 @@
     "pretest:e2e": "run-s test:create-vitest-environment-mongo test:install-vitest-environment-mongo",
     "test:e2e": "vitest run src/http",
     "test:e2e:watch": "vitest src/http",
+    "pretest:coverage": "run-s test:create-vitest-environment-mongo test:install-vitest-environment-mongo",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui"
   },
