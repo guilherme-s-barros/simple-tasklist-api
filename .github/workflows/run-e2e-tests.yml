@@ -11,6 +11,10 @@ jobs:
         image: mongo
         ports:
           - 27017:27017
+      redis:
+        image: redis:alpine
+        ports:
+          - 6379:6379
 
     steps:
       - uses: actions/checkout@v3
@@ -28,4 +32,5 @@ jobs:
         run: npm run test:e2e
         env:
           DATABASE_URL: "mongodb://localhost:27017/todolist"
+          REDIS_URL: "redis://localhost:6379"
           JWT_SECRET: testing
