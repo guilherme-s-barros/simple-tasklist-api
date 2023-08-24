@@ -1,6 +1,7 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
 
+import { sendMailQueue } from '@/queues/send-mail-queue'
 import { UserAlreadyExistsError } from '@/use-cases/errors/user-already-exists-error'
 import { makeRegisterUseCase } from '@/use-cases/factories/make-register-use-case'
 
@@ -20,6 +21,11 @@ export async function register(request: FastifyRequest, reply: FastifyReply) {
       name,
       email,
       password,
+    })
+
+    await sendMailQueue.add({
+      name,
+      email,
     })
 
     return reply.status(201).send()
