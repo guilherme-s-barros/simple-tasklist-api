@@ -26,7 +26,9 @@ O usuário pode criar sua conta, se autenticar - utilizei a estratégia de auten
 - In-Memory Repository;
 - Background Jobs - Para envio de e-mail assíncrono.
 
-## Requisitos funcionais
+## Roadmap
+
+### Requisitos funcionais
 
 - [x] Deve ser possível cadastrar um usuário;
 - [x] Deve ser possível se autenticar;
@@ -37,11 +39,11 @@ O usuário pode criar sua conta, se autenticar - utilizei a estratégia de auten
 - [x] O usuário deve poder deletar uma tarefa;
 - [x] O usuário deve poder marcar e desmarcar uma tarefa como concluída.
 
-## Regras de negócio
+### Regras de negócio
 
 - [x] Não deve ser possível cadastrar um usuário com e-mail duplicado.
 
-## Requisitos não funcionais
+### Requisitos não funcionais
 
 - [x] A senha do usuário precisa estar criptografada;
 - [x] Os dados da aplicação precisam estarem persistidos em um banco de dados MongoDB;
