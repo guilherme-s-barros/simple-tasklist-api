@@ -14,6 +14,7 @@ O usuário pode criar sua conta, se autenticar - utilizei a estratégia de auten
 - Bcryptjs;
 - Zod;
 - Nodemailer;
+- Docker & Docker compose;
 - Bull;
 - Vitest.
 
